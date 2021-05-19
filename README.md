@@ -1,7 +1,7 @@
 # Getting-and-Cleaning-Data-Course-Project
 Getting and Cleaning Data Course Project
 
-### This repository is the final acitvity for the course to the Specialization on Data Science with R, from Coursera.
+### This repository is the final activity for the third course to the Specialization on Data Science with R, from Coursera.
 
 #### In the repository be load the three files:
     #### 1. README.md - with general information

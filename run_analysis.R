@@ -3,6 +3,7 @@
 library(dplyr)
 
 #----------------------Download and read files--------------------------------
+setwd("/Users/jorgelimas/Documents/MOOCs/COURSERA/Data Science (Specialized) -The John Hopkins University/3. Getting and cleaning data/")
 url<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(url,"uci_hard.zip",mode='wb')
 unzip("uci_hard.zip")

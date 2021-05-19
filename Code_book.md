@@ -31,7 +31,7 @@
 #### names(test_data)<-c("subject",features$V2,"label_act")
 #### names(train_data)<-c("subject",features$V2,"label_act")
 
-## And finally, creating the general database, result the combined the test ans train tables in your rows:
+### And finally, creating the general database, result the combined the test ans train tables in your rows:
 #### general_data<- rbind(test_data,train_data)
 
 ## EXTRACS THE MEAN ANS STANDARD DESVIATION
@@ -39,7 +39,8 @@
 ### general_data %>% select(subject,label_act,contains("mean"),contains("std")) %>% arrange(subject)
 
 ## USES DESCRIPTIVE ACTIVITY NAMES TO NAME THE ACTIVITIES
-
+### In this step, we will assign the categorical description according the labels_act table:
+### tidy_data$id<-labels_act[tidy_data$label_act,2]
 
 ## APPROPRIATELY LABELS THE DATA SET
 
@@ -62,4 +63,11 @@
 |"gravity" | "Gravity"|
 
 ## CREATES A SECOND TIDY DATA
+###  To summarize completely, we group by subject and label_act, creating with thw average for each group.
+last_data <- tidy_data %>% group_by(subject,label_act) %>% summarise_all(mean)
+
+##EXPORT THE FINAL DATABASE
+### For last exporting the last_data in format "txt":
+### write.table(last_data,"final_database.txt",row.names = F)
+
 

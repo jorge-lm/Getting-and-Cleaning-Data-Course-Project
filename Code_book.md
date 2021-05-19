@@ -20,15 +20,41 @@
 | x_train | <- read.table("train/X_train.txt",header = F) | 7352,561
 | y_train | <- read.table("train/y_train.txt",header= F) | 7352,1
 
-## CREATING A GENERAL BASE
-### Once the files are uploaded, creating two data bases:
+## CREATING A GENERAL DATABASE
+### Once the files are uploaded, creating two databases:
 | Variable  | Compositions |
 |-----------|-------------------------|
 | test_data | data.frame(subject_test,x_test,y_test) |
 | train_data| data.frame(subject_train,x_train,y_train)|
 
 ### How the databases hasn't the column names, we aplicated the next code:
-### names(test_data)<-c("subject",features$V2,"label_act")
-### names(train_data)<-c("subject",features$V2,"label_act")
+#### names(test_data)<-c("subject",features$V2,"label_act")
+#### names(train_data)<-c("subject",features$V2,"label_act")
 
+##And finally, creating the general database, result the combined the test ans train tables in your rows:
+#### general_data<- rbind(test_data,train_data)
+
+##EXTRACS THE MEAN ANS STANDARD DESVIATION
+
+##USES DESCRIPTIVE ACTIVITY NAMES TO NAME THE ACTIVITIES
+
+## APPROPRIATELY LABELS THE DATA SET
+
+###Using the gsub() funtion in the next form: names(tidy_data) <-gsub("Gyro", "Gyroscope", names(tidy_data)).
+### we substitute according to the following table:
+|-------|----------------|
+| "Acc"| "Accelerometer"|
+| "Gyro" | "Gyroscope"|
+|"BodyBody" | "Body"|
+|"Mag" | "Magnitude"|
+|"^t" | "Time"|
+|"^f" | "Frequency"|
+|"tBody" | "TimeBody"|
+|"-mean()" | "Mean"|
+|"-std()"| "STD"|
+|"-freq()" | "Frequency"|
+|"angle",|"Angle"|
+|"gravity" | "Gravity"|
+
+## CREATES A SECOND TIDY DATA
 

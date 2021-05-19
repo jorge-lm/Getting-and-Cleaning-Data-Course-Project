@@ -31,17 +31,22 @@
 #### names(test_data)<-c("subject",features$V2,"label_act")
 #### names(train_data)<-c("subject",features$V2,"label_act")
 
-##And finally, creating the general database, result the combined the test ans train tables in your rows:
+## And finally, creating the general database, result the combined the test ans train tables in your rows:
 #### general_data<- rbind(test_data,train_data)
 
-##EXTRACS THE MEAN ANS STANDARD DESVIATION
+## EXTRACS THE MEAN ANS STANDARD DESVIATION
+### The "tidy_data" is create with only subject, label_act and columns with contain the mean and std.
+### general_data %>% select(subject,label_act,contains("mean"),contains("std")) %>% arrange(subject)
 
-##USES DESCRIPTIVE ACTIVITY NAMES TO NAME THE ACTIVITIES
+## USES DESCRIPTIVE ACTIVITY NAMES TO NAME THE ACTIVITIES
+
 
 ## APPROPRIATELY LABELS THE DATA SET
 
-###Using the gsub() funtion in the next form: names(tidy_data) <-gsub("Gyro", "Gyroscope", names(tidy_data)).
+### Using the gsub() funtion in the next form: names(tidy_data) <-gsub("Gyro", "Gyroscope", names(tidy_data)).
 ### we substitute according to the following table:
+
+| |to replace|
 |-------|----------------|
 | "Acc"| "Accelerometer"|
 | "Gyro" | "Gyroscope"|

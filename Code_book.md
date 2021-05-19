@@ -21,5 +21,14 @@
 | y_train | <- read.table("train/y_train.txt",header= F) | 7352,1
 
 ## CREATING A GENERAL BASE
-### Once 
+### Once the files are uploaded, creating two data bases:
+| Variable  | Compositions |
+|-----------|-------------------------|
+| test_data | data.frame(subject_test,x_test,y_test) |
+| train_data| data.frame(subject_train,x_train,y_train)|
+
+### How the databases hasn't the column names, we aplicated the next code:
+### names(test_data)<-c("subject",features$V2,"label_act")
+### names(train_data)<-c("subject",features$V2,"label_act")
+
 
